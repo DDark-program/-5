@@ -18,8 +18,8 @@ namespace Lib_2
         /// <summary>
         /// Присваивание значения полям
         /// </summary>
-        /// <param name="oneNumber"></param>
-        /// <param name="twoNumber"></param>
+        /// <param name="oneNumber">Первое число</param>
+        /// <param name="twoNumber">Второе число</param>
         
         public Pair(int oneNumber, int twoNumber)
         {
@@ -30,7 +30,7 @@ namespace Lib_2
         /// <summary>
         /// Свойства первого числа
         /// </summary>
-        
+      
         public int First
         {
             get => _firstNumber;
@@ -48,9 +48,9 @@ namespace Lib_2
         }
 
         /// <summary>
-        /// Сложение полей
+        /// Метод класса Pair "Сложение полей чисел"
         /// </summary>
-        /// <returns></returns>
+        /// <returns>Вывод суммы первого числа со вторым</returns>
 
         public int Sum()
         {
@@ -58,15 +58,28 @@ namespace Lib_2
         }
 
         /// <summary>
-        /// Сложение пар чисел
+        /// Метод класса Pair "Сложение пар чисел"
         /// </summary>
-        /// <param name="firstPair"></param>
-        /// <param name="secondPair"></param>
-        /// <returns></returns>
+        /// <param name="firstPair">Первая пара чисел</param>
+        /// <param name="secondPair">Вторая пара чисел</param>
+        /// <returns>Вывод суммы 1 числа 1 пары с 1 числом 2 пары и 2 числа 1 пары со 2 числом 2 пары</returns>
 
         public static Pair SumPair(Pair firstPair, Pair secondPair)
         {
             return new Pair(firstPair.First + secondPair.First, firstPair.Second + secondPair.Second);
+        }
+
+        /// <summary>
+        /// Перегрузка метода "Сложение пар чисел"; "Сложение триады чисел"
+        /// </summary>
+        /// <param name="firstPair">Первая пара чисел</param>
+        /// <param name="secondPair">Вторая пара чисел</param>
+        /// <param name="thirdPair">Третья пара чисел</param>
+        /// <returns></returns>
+
+        public static Pair SumPair(Pair firstPair, Pair secondPair, Pair thirdPair)
+        {
+            return new Pair(firstPair.First + secondPair.First + thirdPair.First, firstPair.Second + secondPair.Second + thirdPair.Second);
         }
     }
 }

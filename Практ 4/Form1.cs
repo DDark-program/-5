@@ -13,55 +13,48 @@ namespace Практ_4
 {
     public partial class Form1 : Form
     {
-        int onepair = 0;
-        int twopair = 0;
         public Form1()
         {
             InitializeComponent();
         }
 
-        private void btnCalc_Click(object sender, EventArgs e)
-        {
-
-            Pair pair1 = new Pair(Convert.ToInt32(txtA.Text), Convert.ToInt32(txtB.Text));
-            Pair pair2 = new Pair(Convert.ToInt32(txtThree.Text), Convert.ToInt32(txtFour.Text));
-
-            Pair sumPair = Pair.SumPair(pair1, pair2);
-            MessageBox.Show("Значение ab + cd = " + sumPair.First + ":" + sumPair.Second);
-            MessageBox.Show("Значение a+b = " + pair1.Sum());
-            MessageBox.Show("Значение a+b = " + pair2.Sum());
-        }
+        /// <summary>
+        /// Кнопка расчитывает сумму двух чисел
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
 
         private void btnCalc2_Click(object sender, EventArgs e)
         {
-            int a = Convert.ToInt32(txtA.Text);
-            int b = Convert.ToInt32(txtB.Text);
-            int c = Convert.ToInt32(txtC.Text);
-            int res = Pair.SumField(a, b, c);
-            MessageBox.Show("Значение a+b+c = " + res);
+            Pair pair1 = new Pair(Convert.ToInt32(txtFirstNumber1.Text), Convert.ToInt32(txtSecondNumber1.Text));
+            MessageBox.Show("Значение суммы 2 чисел = " + pair1.Sum());
         }
 
-        private void btnCalc3_Click(object sender, EventArgs e)
-        {
-            int a = Convert.ToInt32(txtOne.Text);
-            int b = Convert.ToInt32(txtTwo.Text);
-            int c = Convert.ToInt32(txtThree.Text);
-            int d = Convert.ToInt32(txtFour.Text);
-            Pair.SumPair(a, b, c, d, out onepair, out twopair);
-            MessageBox.Show("Значение (a+c+f),(b+d+j) = " + "(" + onepair + ';' + twopair + ")");
+        /// <summary>
+        /// Кнопка расчитывает сумму 2 и 3 пар чисел
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+
+        private void btnCalc_Click(object sender, EventArgs e)
+        { 
+            Pair pair1 = new Pair(Convert.ToInt32(txtFirstNumber2.Text), Convert.ToInt32(txtSecondNumber2.Text));
+            Pair pair2 = new Pair(Convert.ToInt32(txtThirdNumber2.Text), Convert.ToInt32(txtFourhNumber2.Text));
+            Pair pair3 = new Pair(Convert.ToInt32(txtFifthNumber2.Text), Convert.ToInt32(txtSixthNumber2.Text));
+
+            Pair sumPair1 = Pair.SumPair(pair1, pair2);
+            Pair sumPair2 = Pair.SumPair(pair1, pair2, pair3);
+            MessageBox.Show("Значение суммы 2 пар чисел = " + "( " + sumPair1.First + " ; " + sumPair1.Second + " )");
+            MessageBox.Show("Значение суммы 3 пар чисел = " + "( " + sumPair2.First + " ; " + sumPair2.Second + " )");
         }
 
-        private void btnCalc4_Click(object sender, EventArgs e)
-        {
-            int a = Convert.ToInt32(txtOne.Text);
-            int b = Convert.ToInt32(txtTwo.Text);
-            int c = Convert.ToInt32(txtThree.Text);
-            int d = Convert.ToInt32(txtFour.Text);
-            int f = Convert.ToInt32(txtFive.Text);
-            int j = Convert.ToInt32(txtSix.Text);
-            Pair.SumPair(a, b, c, d, f, j, out onepair, out twopair);
-            MessageBox.Show("Значение (a+c),(b+d) = " + "(" + onepair + ';' + twopair + ")");
-        }
+        
+
+        /// <summary>
+        /// О программе
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
 
         private void button1_Click(object sender, EventArgs e)
         {
@@ -71,6 +64,12 @@ namespace Практ_4
                 " Создать перегруженные методы для увеличения полей на 1, сложения трех пар чисел.");
         }
 
+        /// <summary>
+        /// О программе в меню
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+
         private void оПрограммеToolStripMenuItem_Click(object sender, EventArgs e)
         {
             MessageBox.Show("Выполнил студент группы ИСП-31 Подъяблонский Данила Владимирович+ \n" +
@@ -79,10 +78,22 @@ namespace Практ_4
                 " Создать перегруженные методы для увеличения полей на 1, сложения трех пар чисел.");
         }
 
+        /// <summary>
+        /// Выход
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+
         private void button2_Click(object sender, EventArgs e)
         {
             this.Close();
         }
+
+        /// <summary>
+        /// Выход в меню
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
 
         private void выходToolStripMenuItem_Click(object sender, EventArgs e)
         {
