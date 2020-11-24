@@ -52,9 +52,9 @@ namespace Lib_2
         /// </summary>
         /// <returns>Вывод суммы первого числа со вторым</returns>
 
-        public int Sum()
+        public int Sum(int part)
         {
-            return _firstNumber + _secondNumber;
+            return _firstNumber + _secondNumber + part;
         }
 
         /// <summary>
